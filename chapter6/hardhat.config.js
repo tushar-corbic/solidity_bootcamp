@@ -1,6 +1,7 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config()
 require("@nomiclabs/hardhat-etherscan")
+require("./tasks/block-number")
 /** @type import('hardhat/config').HardhatUserConfig */
 
 const RINKEBY_RPC_URL = process.env.RINKEBY_RPC_URL
@@ -11,7 +12,7 @@ module.exports = {
   networks:{
     rinkeby :{
       url : RINKEBY_RPC_URL,
-      accounts : [PRIVATE_KEY],
+      accounts : [PRIVATE_KEY,],
       chainID : 4,
     }
   },
