@@ -2,6 +2,7 @@ require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config()
 require("@nomiclabs/hardhat-etherscan")
 require("./tasks/block-number")
+require("hardhat-gas-reporter")
 /** @type import('hardhat/config').HardhatUserConfig */
 
 const RINKEBY_RPC_URL = process.env.RINKEBY_RPC_URL
@@ -24,4 +25,10 @@ module.exports = {
     apiKey : ETHERSCAN_API_KEY,
   },
   solidity: "0.8.18",
+  gasReporter :{
+    enabled :true,
+    outputFile: "gas-report.txt",
+    noColors : true,
+    currency : "USD",
+  }
 };
