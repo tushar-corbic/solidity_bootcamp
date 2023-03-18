@@ -21,7 +21,7 @@ async function main(){
 
   const transactionResponse = await simpleStorage.store(7);
   await transactionResponse.wait(1);
-  const updatedValue = await simpleStorage.retreive();
+  const updatedValue = await simpleStorage.retrieve();
   console.log(`The updated value is ${updatedValue}`);
 }
 
